@@ -1,0 +1,21 @@
+.word {
+  @include word;
+  &:hover {
+    border: 1.5px solid $color3;
+  }
+}
+
+.new-word_btn {
+  @include btn;
+  background-color: $color2;
+  color: $white;
+  font-weight: 600;
+
+  &:hover {
+    background-color: $color4;
+  }
+
+  &:active {
+    background-color: $color3;
+  }
+}
