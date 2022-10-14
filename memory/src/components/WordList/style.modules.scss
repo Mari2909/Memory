@@ -1,0 +1,100 @@
+@import "/src/assets/styles/vars.modules.scss";
+@import "/src/assets/styles/mixins.modules.scss";
+@import "/src/assets/styles/general.modules.scss";
+
+.words-list {
+    width: 100%;
+    padding: 2rem 3rem;
+    text-align: start;
+    box-sizing: border-box;
+  }
+
+  .word-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    div {
+      width: 100%;
+      &:first-child {
+        width: 10%;
+      }
+    }
+    font-family: $fontFamily;
+  }
+  
+  .words-list {
+    color: $dark;
+  }
+  
+  .words-list_item {
+    font-family: $fontFamily;
+    font-size: $titleFontSize;
+    font-weight: 700;
+    color: $color2;
+    text-align: center;
+  }
+  
+  .word-list__error-message {
+    font-weight: 600;
+    color: $color3;
+    text-align: end;
+  }
+  
+  .word-list__error-input {
+    border-color: red;
+  }
+
+  
+  .btn {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .add,
+  .close,
+  .edit,
+  .del {
+    width: 30px;
+    @include btn;
+    img {
+      width: 16px;
+      height: 16px;
+      margin: 0;
+    }
+    &:hover {
+      background-color: $light;
+    }
+    &:active {
+      background-color: $color3;
+    }
+  }
+  .add {
+    background-color: $color3;
+  }
+  
+  .close {
+    background-color: $color2;
+  }
+  
+  .edit {
+    background-color: $color3;
+  }
+  
+  .del {
+    background-color: $color5;
+  }
+  
+  .line {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $dark;
+  }
+  
+  .word-info_title {
+    font-family: $fontFamily;
+    font-size: $titleFontSize;
+    font-weight: 700;
+    color: $color5;
+  }
+  

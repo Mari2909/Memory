@@ -1,8 +1,8 @@
-// import WebFont from 'webfontloader';
+import WebFont from 'webfontloader';
 
-// WebFont.load({
+WebFont.load({
 
-//     google: {
-//         families: ['Playfair Display', 'Tenor Sans']
-//     }
-// });
+    google: {
+        families: ['Roboto', 'Montserrat']
+    }
+});

@@ -5,6 +5,11 @@ export default function Word(props) {
     useEffect(() => ref.current.focus(), []);
 
     return (
-        <button ref={ref} onClick={props.show} className="card-btn">перевод</button>
+        <button className="card-btn"
+            ref={ref}
+            onClick={props.show}
+        >
+            перевод
+        </button>
     );
 }

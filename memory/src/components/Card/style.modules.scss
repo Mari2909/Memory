@@ -23,12 +23,6 @@
     color: $dark;
   }
   
-  // .card-word,
-  // .card-transcr,
-  // .card-def {
-  //   margin-bottom: 0.5rem;
-  // }
-  
   .card-word,
   .card-transcr,
   .card-def {
@@ -38,6 +32,7 @@
   .card-word {
     font-size: 2rem;
     font-weight: 600;
+    font-family: $fontFamily;
   }
   
   .card-transcr {
