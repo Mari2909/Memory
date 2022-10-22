@@ -5,7 +5,7 @@ export default function AddWord(props) {
             <div>
                 <input
                     name='english'
-                    className={`word ${props.isValidClass ? '' : 'word-list__error'}`}
+                    className={`${props.english === '' ? 'word-list__error-input' : 'word'}`}
                     value={props.english}
                     onChange={props.checkInput}
                     placeholder="word" />
@@ -13,7 +13,7 @@ export default function AddWord(props) {
             <div>
                 <input
                     name='transcription'
-                    className={`word ${props.isValidClass ? '' : 'word-list__error'}`}
+                    className={`${props.transcription === '' ? 'word-list__error-input' : 'word'}`}
                     value={props.transcription}
                     onChange={props.checkInput}
                     placeholder="transcription" />
@@ -21,7 +21,7 @@ export default function AddWord(props) {
             <div>
                 <input
                     name='russian'
-                    className={`word ${props.isValidClass ? '' : 'word-list__error'}`}
+                    className={`${props.russian === '' ? 'word-list__error-input' : 'word'}`}
                     value={props.russian}
                     onChange={props.checkInput}
                     placeholder="translate" />
@@ -29,7 +29,7 @@ export default function AddWord(props) {
             <div>
                 <input
                     name='tags'
-                    className={`word ${props.isValidClass ? '' : 'word-list__error'}`}
+                    className={`${props.tags === '' ? 'word-list__error-input' : 'word'}`}
                     value={props.tags}
                     onChange={props.checkInput}
                     placeholder="tags" />

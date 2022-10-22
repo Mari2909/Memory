@@ -37,12 +37,16 @@
   
   .word-list__error-message {
     font-weight: 600;
-    color: $color3;
+    color: red;
     text-align: end;
   }
   
   .word-list__error-input {
-    border-color: red;
+    height: 20px;
+    border: 1.5px solid red;
+    border-radius: 8px;
+    background-color: $white;
+    color: $dark;
   }
 
   
@@ -51,7 +55,7 @@
     flex-direction: row;
   }
   
-  .add,
+  .save,
   .close,
   .edit,
   .del {
@@ -69,7 +73,7 @@
       background-color: $color3;
     }
   }
-  .add {
+  .save {
     background-color: $color3;
   }
   

@@ -1,5 +1,6 @@
 .word {
   @include word;
+  border: 1.5px solid $color2;
   &:hover {
     border: 1.5px solid $color3;
   }

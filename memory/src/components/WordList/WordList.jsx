@@ -33,14 +33,25 @@ export default class WordList extends React.Component {
     }
 
     handleChangeInput = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({
+            [e.target.name]: e.target.value,
+            isValid: true
+        })
     }
 
     saveChanges = () => {
-        if (this.state.english.length === 0 || this.state.russian.length === 0 || this.state.russian.length === 0 || this.state.tags.length === 0) {
+        if (this.state.english === '' || this.state.russian === '' || this.state.russian === '' || this.state.tags === '') {
             this.setState({ isValid: false })
         } else {
-            this.setState({ isValid: true, pressed: false })
+            this.setState({
+                isValid: true,
+                pressed: false,
+                english: this.state.english,
+                transcription: this.state.transcription,
+                russian: this.state.russian,
+                tags: this.state.tags
+            })
+            console.log(this.state)
         }
     }
 
@@ -50,49 +61,48 @@ export default class WordList extends React.Component {
             <div>
                 {!this.state.isValid && <div className="word-list__error-message">Заполните поля</div>}
 
-                {
-                    this.state.pressed ?
-                        <div className="line">
-                            <AddWord
-                                key={id}
-                                id={id}
-                                english={this.state.english}
-                                transcription={this.state.transcription}
-                                russian={this.state.russian}
-                                tags={this.state.tags}
-                                checkInput={this.handleChangeInput}
-                                isValidClass={this.state.isValid} />
+                {this.state.pressed ?
+                    <div className="line">
+                        <AddWord
+                            key={id}
+                            id={id}
+                            english={this.state.english}
+                            transcription={this.state.transcription}
+                            russian={this.state.russian}
+                            tags={this.state.tags}
+                            checkInput={this.handleChangeInput}
+                            isValidClass={this.state.isValid} />
 
-                            <div className="btn">
-                                <button className="add" onClick={this.saveChanges} disabled={this.state.isValid ? false : true}>
-                                    <img src={iconSave} alt="icon save" />
-                                </button>
-                                <button className="close" onClick={this.handleChange}>
-                                    <img src={iconCancel} alt="icon cancel" />
-                                </button>
-                                <button className="del">
-                                    <img src={iconDelete} alt="icon delete" />
-                                </button>
-                            </div>
+                        <div className="btn">
+                            <button className="save" onClick={this.saveChanges} disabled={this.state.isValid ? false : true}>
+                                <img src={iconSave} alt="icon save" />
+                            </button>
+                            <button className="close" onClick={this.handleChange}>
+                                <img src={iconCancel} alt="icon cancel" />
+                            </button>
+                            <button className="del" onClick={this.deleteChange}>
+                                <img src={iconDelete} alt="icon delete" />
+                            </button>
                         </div>
-                        :
-                        <div className="line">
-                            <WordItem
-                                key={id}
-                                id={id}
-                                english={english}
-                                transcription={transcription}
-                                russian={russian}
-                                tags={tags} />
-                            <div className="btn">
-                                <button className="edit" onClick={this.handleChange}>
-                                    <img src={iconEdit} alt="icon edit" />
-                                </button>
-                                <button className="del">
-                                    <img src={iconDelete} alt="icon delete" />
-                                </button>
-                            </div>
+                    </div>
+                    :
+                    <div className="line">
+                        <WordItem
+                            key={id}
+                            id={id}
+                            english={english}
+                            transcription={transcription}
+                            russian={russian}
+                            tags={tags} />
+                        <div className="btn">
+                            <button className="edit" onClick={this.handleChange}>
+                                <img src={iconEdit} alt="icon edit" />
+                            </button>
+                            <button className="del" onClick={this.deleteChange}>
+                                <img src={iconDelete} alt="icon delete" />
+                            </button>
                         </div>
+                    </div>
                 }
             </div>
         );
