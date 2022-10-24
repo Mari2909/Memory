@@ -24,7 +24,7 @@ export default function App() {
             <Route path="main" element={<Main />} />
             <Route path="game" element={<Memory />} />
             <Route path="cards" element={<Cards words={words} />} />
-            <Route path="" element={<Main />} />
+            <Route path="/" element={<Main />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
