@@ -14,7 +14,7 @@ export default function Card(props) {
                     transcription={props.transcription}
                     russian={props.russian}
                     tags={props.tags}
-                //</div>id={props.id}
+                    id={props.id}
                 >
                 </Translation>
             ) : (

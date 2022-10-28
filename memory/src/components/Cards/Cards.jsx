@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Card from '../Card/Card';
-import words from '../../data';
+//import words from '../../data';
+import { WordsContext } from '../Context/WordsContext';
 
 export default function Cards(props) {
 
@@ -9,10 +10,10 @@ export default function Cards(props) {
     const handleChange = (index) => {
         setPressed(index);
     }
-
+    const { words } = useContext(WordsContext);
 
     return (
-        <section className="card-box">
+        < section className="card-box" >
             {
                 words.map((word, index) =>
                     <Card
@@ -26,6 +27,6 @@ export default function Cards(props) {
                     >
                     </Card>)
             }
-        </section>
+        </ section>
     );
 }

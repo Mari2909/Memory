@@ -5,6 +5,7 @@ import Header from './components/Header/Header'
 import Main from '../src/components/Main/Main';
 import Memory from './components/Memory/Memory'
 import NotFound from './components/NotFound/NotFound'
+import { WordsContextProvider, WordsContext } from './components/Context/WordsContext';
 import './assets/styles/style.modules.scss'
 import './assets/fonts/fonts';
 import {
@@ -17,18 +18,20 @@ import {
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="main" element={<Main />} />
-            <Route path="game" element={<Memory />} />
-            <Route path="cards" element={<Cards words={words} />} />
-            <Route path="/" element={<Main />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-      </div>
+      <WordsContextProvider>
+        <div className="App">
+          <Header />
+          <main>
+            <Routes>
+              <Route path="main" element={<Main />} />
+              <Route path="game" element={<Memory />} />
+              <Route path="cards" element={<Cards words={words} />} />
+              <Route path="/" element={<Main />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+        </div>
+      </WordsContextProvider>
     </BrowserRouter>
   );
 }

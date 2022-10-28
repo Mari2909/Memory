@@ -12,3 +12,4 @@ let wordsJSON = `[
 
 let words = JSON.parse(wordsJSON);
 export default words;
+
