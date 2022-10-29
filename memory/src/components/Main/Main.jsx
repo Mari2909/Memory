@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import WordList from '../WordList/WordList';
-import words from '../../data';
+import { WordsContext } from '../Context/WordsContext';
 
 export default function Main() {
+    const { words } = useContext(WordsContext);
 
     return (
         <div className="words-list">

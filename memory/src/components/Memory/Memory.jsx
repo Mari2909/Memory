@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Slider from './Slider';
 import Card from '../Card/Card';
-import words from '../../data';
+import { WordsContext } from '../Context/WordsContext';
 
 export default function MemoryCheck(props) {
+
+    const { words } = useContext(WordsContext);
+
     const [currentItem, setPosition] = useState(0);
     const [learnedWordsTotal, setLearnedWordsTotal] = useState(0);
     const [pressed, setPressed] = useState(false);

@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import Card from '../Card/Card';
-//import words from '../../data';
 import { WordsContext } from '../Context/WordsContext';
 
 export default function Cards(props) {
